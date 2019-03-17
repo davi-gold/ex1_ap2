@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
+using System.Threading.Tasks; 
 
 namespace Excercise_1
 {
@@ -12,7 +12,6 @@ namespace Excercise_1
 
         String Name { get;}
         String Type { get; }
-
 
         double Calculate(double value);
     }
