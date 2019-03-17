@@ -6,31 +6,26 @@ using System.Threading.Tasks;
 
 namespace Excercise_1
 {
-    public class ComposedMission : IMission
+    public delegate double Func(double var);
+    public class SingleMission : IMission
     {
+        private Func f;
         private string funcName;
-        private event Func funcLst;
-        private double result;
         public event EventHandler<double> OnCalculate;
+        double result;
 
         // constructor
-        public ComposedMission(string str)
+        public SingleMission(Func func, String str)
         {
-            this.funcName = str;
+            this.f = func;
+            this.funcName = new String(str);
         }
 
-        // Add function
-        public ComposedMission Add(Func f)
-        {
-            this.funcLst += f;
-            return this; // for fluent programming
-        }
 
         public double Calculate(double value)
         {
-            if (funcLst != null)
-                this.result = funcLst(value);
-            OnCalculate?.Invoke(this,result); // Raise the event
+            this.result = this.f(value);
+            OnCalculate?.Invoke(this, result); // Raise the event
             return result;
         }
 
@@ -46,7 +41,7 @@ namespace Excercise_1
         {
             get
             {
-                return "Composed";
+                return "Single";
             }
         }
     }

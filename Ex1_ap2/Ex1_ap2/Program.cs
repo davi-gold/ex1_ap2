@@ -26,7 +26,6 @@ namespace Excercise_1
             }
             Console.WriteLine("####################################\n");
         }
-
         public static void Main(string[] args)
         {
             FunctionsContainer funcList = new FunctionsContainer();     // Creating the mission conatiner

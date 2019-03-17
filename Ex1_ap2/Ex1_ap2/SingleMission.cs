@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Excercise_1
 {
-    delegate double Func(double var);
+    public delegate double Func(double var);
     public class SingleMission : IMission
     {
         private Func f;
@@ -15,7 +15,7 @@ namespace Excercise_1
         double result;
 
         // constructor
-        public SingleMission(Func func, String str)
+        public SingleMission(Func func, string str)
         {
             this.f = func;
             this.funcName = new String(str);

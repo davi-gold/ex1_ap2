@@ -4,30 +4,30 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-
 namespace Excercise_1
 {
     public class FunctionsContainer
     {
-        Dictionary<String, Func> dict;
+        private Dictionary<string, Func> dict;
 
         // constructor
-        FunctionsContainer()
+        public FunctionsContainer()
         {
             dict = new Dictionary<string, Func>();
         }
-        
-        // this function 
-        public List<function> getAllMissions()
+
+        public List<string> getAllMissions()
         {
-            List<string> funcList = new ArrayList<string>(this.dict.Keys);
+            List<string> funcList = new List<string>(this.dict.Keys);
             return funcList;
         }
 
-        public dict this[String str]
+        public Func this[string str]
         {
             get
             {
+                if (!dict.ContainsKey(str))
+                    dict[str] = value => value; // for "stam" function
                 return this.dict[str];
             }
             set
@@ -37,3 +37,4 @@ namespace Excercise_1
         }
     }
 }
+
