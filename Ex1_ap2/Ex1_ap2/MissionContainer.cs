@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace Excercise_1
 {
+    // This class represents Functions Container - only one function
     public class FunctionsContainer
     {
         private Dictionary<string, Func> dict;
@@ -27,11 +28,11 @@ namespace Excercise_1
             {
                 if (!dict.ContainsKey(str))
                     dict[str] = value => value; // for "stam" function
-                return this.dict[str];
+                return dict[str];
             }
             set
             {
-                this.dict[str] = value;
+                dict[str] = value;
             }
         }
     }
