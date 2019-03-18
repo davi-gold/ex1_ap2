@@ -25,7 +25,6 @@ namespace Excercise_1
             this.funcLst += f;
             return this; // for fluent programming
         }
-
         public double Calculate(double value)
         {
             if (funcLst != null)
@@ -33,21 +32,7 @@ namespace Excercise_1
             OnCalculate?.Invoke(this,result); // Raise the event
             return result;
         }
-
-        String Name
-        {
-            get
-            {
-                return this.funcName;
-            }
-        }
-
-        String Type
-        {
-            get
-            {
-                return "Composed";
-            }
-        }
+        string IMission.Name => this.funcName;
+        string IMission.Type => "Composed";
     }
 }

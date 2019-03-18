@@ -9,7 +9,6 @@ namespace Excercise_1
     public class FunctionsContainer
     {
         private Dictionary<string, Func> dict;
-
         // constructor
         public FunctionsContainer()
         {
@@ -37,4 +36,3 @@ namespace Excercise_1
         }
     }
 }
-
