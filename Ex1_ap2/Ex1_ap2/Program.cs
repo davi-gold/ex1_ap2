@@ -104,5 +104,5 @@ namespace Excercise_1
             PrintAvailableFunctions(funcList);
             Console.ReadKey();
         }
-    }
+    } 
 }

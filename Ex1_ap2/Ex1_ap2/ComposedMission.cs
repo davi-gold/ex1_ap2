@@ -9,26 +9,31 @@ namespace Excercise_1
     public class ComposedMission : IMission
     {
         private string funcName;
-        private event Func funcLst;
-        private double result;
+        public List<Func> funComposed;
         public event EventHandler<double> OnCalculate;
 
         // constructor
         public ComposedMission(string str)
         {
             this.funcName = str;
+            this.funComposed = new List<Func>();
         }
 
         // Add function
         public ComposedMission Add(Func f)
         {
-            this.funcLst += f;
-            return this; // for fluent programming
+            this.funComposed.Add(f);
+            return this;
         }
+
         public double Calculate(double value)
         {
-            if (funcLst != null)
-                this.result = funcLst(value);
+            double result = value;
+            foreach (Func f in funComposed)
+            {
+                if (funComposed != null && f != null)
+                    result = f(value);
+            }
             OnCalculate?.Invoke(this,result); // Raise the event
             return result;
         }
