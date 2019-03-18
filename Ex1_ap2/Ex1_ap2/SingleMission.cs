@@ -26,7 +26,7 @@ namespace Excercise_1
             this.funcName = str;
         } 
 
-        // This function runs the inner function for calculation and call the subscribers 
+        // This method runs the inner function for calculation and calls the subscribers 
         public double Calculate(double value)
         {
             this.result = this.func(value);
